@@ -1,0 +1,12 @@
+# OS
+.DS_Store
+
+# Claude Code (local settings / preview config)
+.claude/
+
+# 作業用スクリーンショット（個人・内部情報を含むため公開しない）
+/ルーティーン.png
+/スキルの作成・使用.png
+/翔啓イラストのコピー.png
+/images/work-instagram.png
+/images/work-skill.png

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>翔啓 / Shokei — AI Developer Portfolio</title>
+  <meta name="description" content="AIと組んで、面倒な仕事を「自動で動く仕組み」に変える。機械学習から運用自動化まで、手を動かして実装するAIクリエイター・翔啓のポートフォリオ。" />
+
+  <!-- OGP -->
+  <meta property="og:title" content="翔啓 / Shokei — AI Developer Portfolio" />
+  <meta property="og:description" content="AIと組んで、面倒な仕事を「自動で動く仕組み」に変える。機械学習から運用自動化まで、手を動かして実装するAIクリエイター。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/avatar.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="メインナビゲーション">
+      <a href="#top" class="nav__logo">翔啓<span>.dev</span></a>
+
+      <button class="nav__toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact" class="nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__text reveal">
+          <p class="hero__kicker">AI DEVELOPER / 自動化クリエイター</p>
+          <h1 class="hero__title">
+            AIと組んで、<br />
+            <span class="grad">仕事を「自動で動く仕組み」</span><br />
+            に変える。
+          </h1>
+          <p class="hero__lead">
+            機械学習モデルの構築から、Instagram運用のリサーチ自動化、独自スキル開発まで。
+            Claude Code を相棒に、アイデアを「実際に動くもの」へと形にしています。
+          </p>
+          <div class="hero__actions">
+            <a href="#works" class="btn btn--primary">実績を見る</a>
+            <a href="#contact" class="btn btn--ghost">連絡する</a>
+          </div>
+          <ul class="hero__chips" aria-label="得意領域">
+            <li>🤖 機械学習</li>
+            <li>🔄 業務自動化</li>
+            <li>⚡ Claude Code</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="hero__avatar">
+            <img src="images/avatar.png" alt="翔啓のイラストアイコン。ラベンダー畑と青空を背景に笑う人物" />
+          </div>
+          <div class="hero__badge">
+            <span class="hero__badge-dot"></span> Now Learning at ユニコスクール
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <p class="section__kicker reveal">01 — About</p>
+        <h2 class="section__title reveal">「作って終わり」ではなく、<br class="sp-only" />「動き続ける」を作る。</h2>
+        <div class="about__grid">
+          <p class="about__lead reveal">
+            ユニコスクールでAI開発を学ぶクリエイターです。
+            データ分析や機械学習のモデル作りはもちろん、
+            日々の運用を自動で回す仕組みづくりまで、
+            「手を動かして実装しきること」を大切にしています。
+          </p>
+          <ul class="about__points">
+            <li class="reveal">
+              <span class="about__point-icon">📊</span>
+              <h3>データで語る</h3>
+              <p>可視化と評価指標で、結果を数字とグラフで示します。</p>
+            </li>
+            <li class="reveal">
+              <span class="about__point-icon">🔧</span>
+              <h3>仕組みにする</h3>
+              <p>単発の作業ではなく、毎日勝手に回るルーティーンへ。</p>
+            </li>
+            <li class="reveal">
+              <span class="about__point-icon">🤝</span>
+              <h3>AIと協働する</h3>
+              <p>Claude Code を相棒に、設計から実装まで一気通貫で。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <p class="section__kicker reveal">02 — Skills</p>
+        <h2 class="section__title reveal">使っている道具たち</h2>
+
+        <div class="skills__grid">
+          <div class="skill-card reveal">
+            <h3 class="skill-card__title"><span>🤖</span> AI・開発</h3>
+            <ul class="skill-card__list">
+              <li>Claude Code</li>
+              <li>Python</li>
+              <li>HTML / CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="skill-card reveal">
+            <h3 class="skill-card__title"><span>📈</span> データ・機械学習</h3>
+            <ul class="skill-card__list">
+              <li>pandas</li>
+              <li>scikit-learn</li>
+              <li>matplotlib / seaborn</li>
+              <li>Random Forest</li>
+            </ul>
+          </div>
+          <div class="skill-card reveal">
+            <h3 class="skill-card__title"><span>🔄</span> 自動化・運用</h3>
+            <ul class="skill-card__list">
+              <li>Instagram運用自動化</li>
+              <li>データ収集 / 集計</li>
+              <li>Google スプレッドシート</li>
+              <li>ルーティーン化</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Works ===== -->
+    <section class="section" id="works">
+      <div class="container">
+        <p class="section__kicker reveal">03 — Works</p>
+        <h2 class="section__title reveal">これまでに作ったもの</h2>
+        <p class="section__lead reveal">クリックすると詳細を表示します。実績は順次追加していきます。</p>
+
+        <div class="bento">
+          <!-- Feature: Instagram automation (screenshot withheld for privacy) -->
+          <article class="work work--feature reveal" data-title="Instagram競合リサーチ自動化" data-desc="競合アカウントのデータを毎朝自動で収集し、影響力スコアを算出してGoogleスプレッドシートへ転記するルーティーンを構築。急増フラグの検知まで自動化しています。" data-tags="自動化 / Claude Code / データ収集" data-result="毎日10アカウントを自動処理・エラー0件">
+            <div class="work__media work__media--ph" aria-hidden="true">
+              <div class="ph-chart">
+                <span class="ph-bar" style="height:46%"></span>
+                <span class="ph-bar" style="height:80%"></span>
+                <span class="ph-bar" style="height:62%"></span>
+                <span class="ph-bar" style="height:92%"></span>
+                <span class="ph-bar" style="height:54%"></span>
+              </div>
+              <p class="work__ph-label">スクリーンショット準備中</p>
+            </div>
+            <div class="work__body">
+              <div class="work__tags"><span>自動化</span><span>Claude Code</span></div>
+              <h3 class="work__title">Instagram競合リサーチ自動化</h3>
+              <p class="work__excerpt">毎朝、競合10アカウントを自動収集 → 影響力スコア算出 → スプレッドシート転記まで全自動。</p>
+              <p class="work__result">📈 毎日10件を自動処理・エラー0件</p>
+            </div>
+          </article>
+
+          <!-- Claude skill (screenshot withheld for privacy) -->
+          <article class="work reveal" data-title="Claude Code 独自スキル開発" data-desc="成果物を1ファイルの自己完結HTMLに書き出す独自スキルを作成・運用。ダブルクリックで開ける、ビジュアル図解つきの資料を自動生成できるようにしました。" data-tags="Claude Code / 自動化" data-result="再利用可能なスキルとして運用中">
+            <div class="work__media work__media--ph" aria-hidden="true">
+              <span class="ph-glyph">🧩</span>
+              <p class="work__ph-label">スクリーンショット準備中</p>
+            </div>
+            <div class="work__body">
+              <div class="work__tags"><span>Claude Code</span></div>
+              <h3 class="work__title">独自スキルの開発</h3>
+              <p class="work__excerpt">成果物を自己完結HTMLに書き出すスキルを自作。資料づくりを自動化。</p>
+            </div>
+          </article>
+
+          <!-- Titanic EDA (placeholder) -->
+          <article class="work work--placeholder reveal" data-title="タイタニック生存予測:EDA・可視化" data-desc="性別・客室クラス・年齢などの特徴量と生存率の関係を可視化。データから生存パターンを読み解きました。" data-tags="機械学習 / pandas / seaborn" data-result="女性・上位クラスで生存率が高い傾向を可視化">
+            <div class="work__media work__media--ph" aria-hidden="true">
+              <div class="ph-chart">
+                <span class="ph-bar" style="height:38%"></span>
+                <span class="ph-bar" style="height:72%"></span>
+                <span class="ph-bar" style="height:55%"></span>
+                <span class="ph-bar" style="height:88%"></span>
+              </div>
+              <p class="work__ph-label">スクリーンショット追加予定</p>
+            </div>
+            <div class="work__body">
+              <div class="work__tags"><span>機械学習</span><span>可視化</span></div>
+              <h3 class="work__title">タイタニック生存予測 — EDA</h3>
+              <p class="work__excerpt">性別・客室クラス・年齢と生存率の関係を可視化して分析。</p>
+            </div>
+          </article>
+
+          <!-- Random Forest (placeholder, wide) -->
+          <article class="work work--wide work--placeholder reveal" data-title="ランダムフォレストで生存予測" data-desc="前処理・特徴量エンジニアリングののち、ランダムフォレストで生存を予測。混同行列で精度を、特徴量重要度で各項目の寄与度を評価しました。" data-tags="機械学習 / scikit-learn / Random Forest" data-result="fare・性別・年齢が予測に強く寄与">
+            <div class="work__media work__media--ph" aria-hidden="true">
+              <div class="ph-matrix">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <p class="work__ph-label">スクリーンショット追加予定</p>
+            </div>
+            <div class="work__body">
+              <div class="work__tags"><span>機械学習</span><span>scikit-learn</span></div>
+              <h3 class="work__title">ランダムフォレストで予測</h3>
+              <p class="work__excerpt">混同行列と特徴量重要度でモデルの精度と寄与度を評価。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Process ===== -->
+    <section class="section section--alt" id="process">
+      <div class="container">
+        <p class="section__kicker reveal">04 — Process</p>
+        <h2 class="section__title reveal">AIとの進め方</h2>
+
+        <ol class="process">
+          <li class="process__step reveal">
+            <span class="process__num">01</span>
+            <h3>課題を決める</h3>
+            <p>自動化したい作業や、解きたい問題を整理する。</p>
+          </li>
+          <li class="process__step reveal">
+            <span class="process__num">02</span>
+            <h3>AIと実装する</h3>
+            <p>Claude Code と一緒に手を動かし、動くものを形にする。</p>
+          </li>
+          <li class="process__step reveal">
+            <span class="process__num">03</span>
+            <h3>検証して直す</h3>
+            <p>実際に動かして確かめ、結果を数字で見て改善する。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section contact" id="contact">
+      <div class="container contact__inner reveal">
+        <p class="section__kicker">05 — Contact</p>
+        <h2 class="contact__title">お気軽にご連絡ください</h2>
+        <p class="contact__lead">制作のご相談・ご依頼、学びの共有など、なんでもどうぞ。</p>
+        <a href="mailto:ohkubo3creator@gmail.com" class="btn btn--primary btn--lg">✉️ メールを送る</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__logo">翔啓<span>.dev</span></span>
+      <p class="footer__copy">© <span id="year"></span> 翔啓 / Shokei — Built with HTML / CSS / JS</p>
+      <a href="#top" class="footer__top">↑ Top</a>
+    </div>
+  </footer>
+
+  <!-- ===== Lightbox ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="作品の詳細">
+    <div class="lightbox__backdrop" data-close></div>
+    <div class="lightbox__panel">
+      <button class="lightbox__close" data-close aria-label="閉じる">✕</button>
+      <div class="lightbox__media" id="lb-media"></div>
+      <div class="lightbox__info">
+        <div class="lightbox__tags" id="lb-tags"></div>
+        <h3 class="lightbox__title" id="lb-title"></h3>
+        <p class="lightbox__desc" id="lb-desc"></p>
+        <p class="lightbox__result" id="lb-result"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
