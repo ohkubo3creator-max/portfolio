@@ -10,7 +10,13 @@
   <meta property="og:title" content="翔啓 / Shokei｜AIで「自動で動くしくみ」をつくる人" />
   <meta property="og:description" content="AIといっしょに、めんどうな作業を「自動で動くしくみ」に変えています。翔啓(Shokei)の作品集。" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="images/avatar.png" />
+  <meta property="og:url" content="https://ohkubo3creator-max.github.io/portfolio/" />
+  <meta property="og:image" content="https://ohkubo3creator-max.github.io/portfolio/images/ogp.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,9 +78,6 @@
           <div class="hero__avatar">
             <img src="images/avatar.png" alt="翔啓のイラストアイコン。ラベンダー畑と青空を背景に笑う人物" />
           </div>
-          <div class="hero__badge">
-            <span class="hero__badge-dot"></span> いま ユニコスクールで勉強中
-          </div>
         </div>
       </div>
     </section>
@@ -86,7 +89,7 @@
         <h2 class="section__title reveal">「作って終わり」ではなく、<br class="sp-only" />「動き続ける」を作る。</h2>
         <div class="about__grid">
           <p class="about__lead reveal">
-            ユニコスクールでAIづくりを学んでいます。
+            AIづくりを学びながら、手を動かして形にしています。
             「データを調べて先を予測する」ことから、
             「毎日の作業がひとりでに回るしくみ」をつくることまで——
             頭で考えるだけで終わらせず、実際に動く形にすることを大切にしています。
@@ -210,36 +213,29 @@
             </div>
           </article>
 
-          <!-- Titanic EDA (placeholder) -->
-          <article class="work work--placeholder reveal" data-title="タイタニック号:生き残りを予測(データ分析編)" data-desc="性別・部屋のランク・年齢などが、生き残りやすさにどう関わるかをグラフにして調べ、パターンを読み解きました。" data-tags="データ分析 / グラフ化" data-result="女性や上のランクの人ほど生き残りやすい傾向が見えた">
-            <div class="work__media work__media--ph" aria-hidden="true">
-              <div class="ph-chart">
-                <span class="ph-bar" style="height:38%"></span>
-                <span class="ph-bar" style="height:72%"></span>
-                <span class="ph-bar" style="height:55%"></span>
-                <span class="ph-bar" style="height:88%"></span>
-              </div>
-              <p class="work__ph-label">スクリーンショット追加予定</p>
+          <!-- Titanic EDA -->
+          <article class="work work--wide reveal" data-img="images/work-titanic-eda.png" data-title="タイタニック号:生き残りを予測(データ分析編)" data-desc="性別・部屋のランク・年齢などが、生き残りやすさにどう関わるかをグラフにして調べ、パターンを読み解きました。女性は74%が助かった一方、男性は19%。客室のランクが上がるほど生存率も上がっていました。" data-tags="データ分析 / グラフ化" data-result="女性の生存率74%・男性19%。上のランクほど生き残りやすい">
+            <div class="work__media work__media--chart">
+              <img src="images/work-titanic-eda.png" alt="タイタニック号の分析グラフ。性別ごと(男性19%・女性74%)と客室クラスごと(1等63%・2等47%・3等24%)の生存率" loading="lazy" />
             </div>
             <div class="work__body">
               <div class="work__tags"><span>データ分析</span><span>グラフ化</span></div>
               <h3 class="work__title">タイタニック号:生き残りを予測</h3>
-              <p class="work__excerpt">性別・部屋のランク・年齢が、生き残りやすさにどう関係するかをグラフで分析。</p>
+              <p class="work__excerpt">性別・部屋のランクで生存率がどう変わるかをグラフで分析。</p>
+              <p class="work__result">📊 女性の生存率74%・男性19%</p>
             </div>
           </article>
 
-          <!-- Random Forest (placeholder, wide) -->
-          <article class="work work--wide work--placeholder reveal" data-title="AIで生き残りを予測" data-desc="データを整えたあと、AIに学習させて「生き残るかどうか」を予測。予測がどれだけ当たったか、どの情報が予測に効いたかをグラフで確かめました。" data-tags="AIで予測 / 予測モデル" data-result="料金・性別・年齢が予測に強く効いていた">
-            <div class="work__media work__media--ph" aria-hidden="true">
-              <div class="ph-matrix">
-                <span></span><span></span><span></span><span></span>
-              </div>
-              <p class="work__ph-label">スクリーンショット追加予定</p>
+          <!-- Random Forest (wide) -->
+          <article class="work work--wide reveal" data-img="images/work-titanic-rf.png" data-title="AIで生き残りを予測" data-desc="データを整えたあと、AIに学習させて「生き残るかどうか」を予測。179人ぶんの答え合わせで正解率は約81%でした。予測に強く効いたのは「料金・性別・年齢」だと分かりました。" data-tags="AIで予測 / 予測モデル" data-result="正解率 約81%(179人中145人を的中)">
+            <div class="work__media work__media--chart">
+              <img src="images/work-titanic-rf.png" alt="AIの予測結果。答え合わせの表(正解率約81%)と、予測に効いた情報ランキング(料金・性別・年齢が上位)" loading="lazy" />
             </div>
             <div class="work__body">
               <div class="work__tags"><span>AIで予測</span><span>予測モデル</span></div>
               <h3 class="work__title">AIで生き残りを予測</h3>
-              <p class="work__excerpt">予測がどれくらい当たるか、どの情報が効いたかをグラフで確かめました。</p>
+              <p class="work__excerpt">答え合わせの結果と、予測に効いた情報のランキングをグラフで確認。</p>
+              <p class="work__result">📊 正解率 約81%・カギは「料金・性別・年齢」</p>
             </div>
           </article>
         </div>
