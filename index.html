@@ -22,7 +22,7 @@
 
   <!-- Performance: ヒーロー画像を優先取得 -->
   <link rel="preload" as="image" href="images/work-sns-sheet-real.png" />
-  <link rel="preload" as="image" href="images/work-titanic-rf.png" />
+  <link rel="preload" as="image" href="images/work-titanic-score.png" />
 
   <link rel="stylesheet" href="css/style.css?v=20260614" />
   <script>document.documentElement.classList.add("js");</script>
@@ -47,14 +47,14 @@
     <div class="hero-bg" aria-hidden="true">
       <div class="hero-tile t1"><img src="images/work-sns-sheet-real.png" alt="" width="400" height="300" /></div>
       <div class="hero-tile t2">📊</div>
-      <div class="hero-tile t3"><img src="images/work-titanic-rf.png" alt="" width="400" height="300" /></div>
+      <div class="hero-tile t3"><img src="images/work-titanic-score.png" alt="" width="400" height="300" /></div>
       <div class="hero-tile t4">🤖</div>
       <div class="hero-tile t5"><img src="images/work-shap.png" alt="" width="400" height="300" /></div>
       <div class="hero-tile t6">🔄</div>
       <div class="hero-tile t7">✨</div>
       <div class="hero-tile t8"><img src="images/work-freee.png" alt="" width="400" height="300" /></div>
       <div class="hero-tile t9"><img src="images/work-puzzle.png" alt="" width="400" height="300" /></div>
-      <div class="hero-tile t10"><img src="images/work-titanic-eda.png" alt="" width="400" height="300" /></div>
+      <div class="hero-tile t10"><img src="images/work-titanic-features.png" alt="" width="400" height="300" /></div>
       <div class="hero-tile t11">⚙️</div>
       <div class="hero-tile t12">💡</div>
     </div>
@@ -124,11 +124,11 @@
     </div>
 
     <div class="feature-row fade">
-      <div class="feature-img fi3"><img src="images/work-titanic-rf.png" alt="タイタニックの生存をAIで予測した結果（正解率約81%）" width="600" height="450" loading="lazy" /></div>
+      <div class="feature-img fi3"><img src="images/work-titanic-features.png" alt="タイタニック生存予測モデルの特徴量重要度と、性別・客室クラス別の生存率" width="600" height="450" loading="lazy" /></div>
       <div class="feature-text">
         <p class="num en">FEATURE 03</p>
         <h3>機械学習の基礎を、手を動かして</h3>
-        <p>タイタニックの乗客データで「生き残るか」を予測。データの前処理から予測、答え合わせ（正解率 約81%）、どの情報が効いたかの可視化まで。流行りものだけでなく、基礎をきちんと自分の手で固めています。</p>
+        <p>タイタニックの乗客データで「生き残るか」を予測。前処理から予測・答え合わせまで実装し、5分割の交差検証で平均0.843、本番（Kaggle）スコア0.763。FareやAge、性別・客室クラスなど「どの情報が効いたか」まで可視化しました。流行りものだけでなく、基礎を自分の手で固めています。</p>
       </div>
     </div>
 
@@ -164,17 +164,17 @@
         </div>
       </div>
       <div class="work-card fade">
-        <img src="images/work-titanic-eda.png" alt="タイタニック 生存率の可視化" width="400" height="400" loading="lazy" />
+        <img src="images/work-titanic-features.png" alt="タイタニックの特徴量重要度と性別・客室クラス別の生存率" width="400" height="400" loading="lazy" />
         <div class="overlay">
           <h4>タイタニック:生存率の可視化</h4>
-          <p>pandas / グラフ化<br />性別・客室クラス別に分析</p>
+          <p>特徴量の重要度・EDA<br />性別・客室クラス別の生存率</p>
         </div>
       </div>
       <div class="work-card fade">
-        <img src="images/work-titanic-rf.png" alt="AIで生き残りを予測" width="400" height="400" loading="lazy" />
+        <img src="images/work-titanic-score.png" alt="AIで生き残りを予測（交差検証0.843・本番LB0.763）" width="400" height="400" loading="lazy" />
         <div class="overlay">
           <h4>AIで生き残りを予測</h4>
-          <p>scikit-learn / ランダムフォレスト<br />正解率 約81%</p>
+          <p>scikit-learn / ランダムフォレスト<br />交差検証0.843・本番LB0.763</p>
         </div>
       </div>
       <div class="work-card fade">
