@@ -81,6 +81,21 @@ svg text.bs{fill:var(--soft);font-size:12.5px}
 svg text.ed{fill:var(--soft);font-size:12px}
 svg text.lblc{fill:var(--ink);font-size:13px;text-anchor:middle}
 .card pre code{font-family:'SFMono-Regular',Consolas,monospace}
+/* 計算セクション（途中式・分数・単位系） */
+.calc{overflow-x:auto}
+.calc .frow{display:flex;gap:.55em;align-items:flex-start;padding:11px 2px;border-bottom:1px solid var(--line);font-size:14.5px;line-height:2}
+.calc .frow:last-child{border-bottom:0}
+.calc .lbl{flex:none;color:var(--accent);font-weight:700}
+.calc .ft{flex:1;min-width:0}
+.calc .sub2{color:var(--soft);font-size:12.5px}
+.calc b{color:var(--ink)}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 .25em}
+.frac .nu{border-bottom:1.5px solid currentColor;padding:0 .5em 1px}
+.frac .de{padding:1px .5em 0}
+.usys{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.usys .u{background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:9px 13px;font-size:13.5px}
+.usys .u b{color:var(--accent)}
+.calc mark{background:rgba(225,87,59,.16);color:var(--ink);padding:0 .3em;border-radius:4px}
 
 </style></head>
 <body>
@@ -182,7 +197,55 @@ best, score = tq.top_k(search, algo, k=1)[0]</code></pre></div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="reveal"><div class="kick">04 — Result</div><h2 class="mincho">結果：断面はこう変わった</h2>
+  <div class="reveal"><div class="kick">04 — The math</div><h2 class="mincho">計算の中身（材料力学）</h2>
+    <p class="sectlead">採点ソルバが各案に回している式。単位を <b>[N, mm, MPa]</b> に統一し、<b>換算を式の中で完結</b>させている——だから途中で単位変換が要らない。</p></div>
+
+  <div class="card reveal"><div class="ch">単位系の取り決め ＝ 換算を式に閉じ込める鍵</div>
+    <div class="usys">
+      <div class="u"><b>1 MPa = 1 N/mm²</b> → 応力はそのまま MPa で出る</div>
+      <div class="u">E = 205 GPa = <b>2.05×10⁵ N/mm²</b></div>
+      <div class="u">ρ = 7850 kg/m³ = <b>7.85×10⁻⁶ kg/mm³</b></div>
+      <div class="u">力 N・長さ mm → モーメントは <b>N·mm</b></div>
+    </div></div>
+
+  <div class="card calc reveal"><div class="ch">最適解 16.25 × 121.95 × t1.0 mm を、数値と単位こみで解く</div>
+    <div class="frow"><span class="lbl">①</span><span class="ft">断面諸量（矩形中空 RHS）。内寸 b<sub>i</sub>=b−2t=16.25−2(1.0)=<b>14.25 mm</b>、h<sub>i</sub>=<b>119.95 mm</b><br>
+      A = b·h − b<sub>i</sub>·h<sub>i</sub> = 16.25·121.95 − 14.25·119.95 = <b>272.4 mm²</b><br>
+      I = <span class="frac"><span class="nu">b·h³ − b<sub>i</sub>·h<sub>i</sub>³</span><span class="de">12</span></span> =
+      <span class="frac"><span class="nu">16.25·121.95³ − 14.25·119.95³</span><span class="de">12</span></span> = <b>4.07×10⁵ mm⁴</b></span></div>
+
+    <div class="frow"><span class="lbl">②</span><span class="ft">曲げモーメント（固定端）： M = P·L = 2000 N × 500 mm = <b>1.00×10⁶ N·mm</b></span></div>
+
+    <div class="frow"><span class="lbl">③</span><span class="ft">曲げ応力（縁端距離 c = h/2 = 60.98 mm）：
+      σ = <span class="frac"><span class="nu">M·c</span><span class="de">I</span></span> =
+      <span class="frac"><span class="nu">1.00×10⁶ N·mm × 60.98 mm</span><span class="de">4.07×10⁵ mm⁴</span></span>
+      = <b>150.0 N/mm² = 150.0 MPa</b>　<span class="sub2">（<mark>N·mm·mm ÷ mm⁴ = N/mm² = MPa</mark>）</span> ✅ ≤ 150</span></div>
+
+    <div class="frow"><span class="lbl">④</span><span class="ft">先端たわみ：
+      δ = <span class="frac"><span class="nu">P·L³</span><span class="de">3·E·I</span></span> =
+      <span class="frac"><span class="nu">2000 N × (500 mm)³</span><span class="de">3 × 2.05×10⁵ N/mm² × 4.07×10⁵ mm⁴</span></span>
+      = <span class="frac"><span class="nu">2.50×10¹¹</span><span class="de">2.50×10¹¹</span></span> = <b>1.00 mm</b>
+      　<span class="sub2">（<mark>N·mm³ ÷ (N/mm²·mm⁴) = mm</mark>）</span> ✅ ≤ 1.0</span></div>
+
+    <div class="frow"><span class="lbl">⑤</span><span class="ft">質量： m = ρ·A·L = 7.85×10⁻⁶ kg/mm³ × 272.4 mm² × 500 mm = <b>1.069 kg</b>
+      　<span class="sub2">（kg/mm³ × mm² × mm = kg）</span></span></div>
+
+    <div class="frow"><span class="lbl">⑥</span><span class="ft">軽量化率： (m<sub>基準</sub> − m<sub>最適</sub>) ÷ m<sub>基準</sub> = (6.971 − 1.069) ÷ 6.971 = <b>84.7 %</b></span></div>
+  </div>
+
+  <div class="card reveal"><div class="ch">基準 vs 最適（まったく同じ式で計算）</div><table>
+    <tr><th>量</th><th>基準 60×100×6</th><th>最適 16×122×1.0</th></tr>
+    <tr><td class="k">断面積 A</td><td class="n">1776 mm²</td><td class="v">272 mm²</td></tr>
+    <tr><td class="k">断面二次モーメント I</td><td class="n">2.27×10⁶ mm⁴</td><td class="v">4.07×10⁵ mm⁴</td></tr>
+    <tr><td class="k">曲げ応力 σ（≤150）</td><td class="n">22.0 MPa</td><td class="v">150.0 MPa</td></tr>
+    <tr><td class="k">先端たわみ δ（≤1.0）</td><td class="n">0.179 mm</td><td class="v">1.000 mm</td></tr>
+    <tr><td class="k">質量 m</td><td class="n">6.971 kg</td><td class="v">1.069 kg</td></tr>
+  </table>
+  <div class="note">基準は応力もたわみも限界の2割以下＝<b>過剰設計</b>。最適解は両方を 1.00 まで使い切り、質量だけを削った。</div></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="reveal"><div class="kick">05 — Result</div><h2 class="mincho">結果：断面はこう変わった</h2>
     <p class="sectlead">ずんぐりした箱（基準）から、<b>薄く背の高い断面</b>へ。実寸比で描画。</p></div>
   <div class="card reveal" style="padding:22px">
 <svg viewBox="0 0 380 256" width="100%" role="img" aria-label="基準断面と最適断面の実寸比較">
@@ -206,7 +269,7 @@ best, score = tq.top_k(search, algo, k=1)[0]</code></pre></div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="reveal"><div class="kick">05 — Inside the search</div><h2 class="mincho">探索の中身</h2>
+  <div class="reveal"><div class="kick">06 — Inside the search</div><h2 class="mincho">探索の中身</h2>
     <p class="sectlead">基準は制約に対して余裕がありすぎ（材料の無駄）。最適解は両制約をちょうど使い切る。</p></div>
   <div class="card chart reveal"><div class="ch">制約の利用率（1.00 ＝ 許容限界）</div>
     <div class="brow"><span class="bl">基準 / 応力</span><span class="bt"><span class="bf dim" data-w="15"></span></span><span class="bv">0.15</span></div>
@@ -222,7 +285,7 @@ best, score = tq.top_k(search, algo, k=1)[0]</code></pre></div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="reveal"><div class="kick">06 — Honesty</div><h2 class="mincho">正直な限界</h2>
+  <div class="reveal"><div class="kick">07 — Honesty</div><h2 class="mincho">正直な限界</h2>
     <p class="sectlead">これは<b>実用設計ツールではない</b>。Sakana の発想を自分の土俵で動かして理解するための最小実験。</p></div>
   <div class="cols reveal">
     <div class="col good"><h3><span class="d"></span>やったこと</h3>
@@ -237,7 +300,7 @@ best, score = tq.top_k(search, algo, k=1)[0]</code></pre></div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="reveal"><div class="kick">07 — Why it matters</div><h2 class="mincho">なぜ作ったか</h2></div>
+  <div class="reveal"><div class="kick">08 — Why it matters</div><h2 class="mincho">なぜ作ったか</h2></div>
   <div class="banner reveal"><div class="mk ital">✦</div>
     <div><div class="big">設計実務の「仮説→計算→検証→修正」 ＝ AB-MCTS の「生成→評価→采配」</div>
     <div class="s">機械設計で毎日やっているループと、Sakana の探索アルゴリズムは<b>同じ構造</b>だった。
